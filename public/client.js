@@ -72,7 +72,7 @@ $(async function() {
     // show info display
     Swal.fire({
       title: 'Credit',
-      html: `Created with <a href="https://repl.it" target="_blank">repl.it</a><br>Created by @7ih on Github, Replit. Find more projects by 7ih <a href="https://projects.7ih.repl.co/" target="_blank">here</a>!<br><br><cred style="text-align:left;"><span style="position:relative;color:red;float:left;"><i>code:</i></span><br><li><a href="https://github.com/paolodelia99/Simple-node-chat-app/tree/master/client" target="_blank">Inspiration for the username input</a></li><li><a href="https://github.com/socketio/chat-example" target="_blank">Basic chat functions and helpful example</a></li><li><a href="https://github.com/mmukhin/psitsmike_example_2" target="_blank">Helpful example for adding multiple rooms</a></li><br><span style="position:relative;color:red;float:left;"><i>main plugins:</span><br></a><li>peerjs</li><li>sweetalert2</li><li>jquery</li><li>socket.io</li></cred>`,
+      html: `Created By aahil<br><br><cred style="text-align:left;"><span `,
       icon: 'info',
       width: '40%'
     })
