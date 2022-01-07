@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+  	<title>Webchat</title>
+
+<!-- insert fonts & material icons -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- favicon -->	
+	<link rel="icon" type="x-icon" href="img/favicon.ico?v=2">
+	
+<!-- insert css -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+<!-- insert all sound effects -->
+	<audio id="n1"><source src="https://media1.vocaroo.com/mp3/1e7S6uUFhZSh"></audio>
+	<audio id="sn1"><source src="https://media1.vocaroo.com/mp3/14hM9IbXTZkc"></audio>
+	<audio id="m1"><source src="https://media1.vocaroo.com/mp3/16d2DbfsFbzK"></audio>
+	<audio id="e"><source src="https://media1.vocaroo.com/mp3/10tjviZgP6eU"></audio>
+	<audio id="n2"><source src="https://media1.vocaroo.com/mp3/1erRxIijm7Bo"></audio>
+	<audio id="n3"><source src="https://media1.vocaroo.com/mp3/15zBDOxOjHiy"></audio>
+  <audio id="r1"><source src="https://media1.vocaroo.com/mp3/1cPT2eMJRxQX"></audio>
+
+  <noscript>Please enable Javascript</noscript>
+</head>
+
+<body>
+<!-- voicechat form -->
+	<audiobar id="vcMenu">
+		<button id='mute' class="material-icons" >mic</button>
+    <button id='leave' class="material-icons" >phone_disabled</button>
+  </audiobar>
+
+<!-- taskbar form -->
+  <open-taskbar id="openTaskbar" class="material-icons taskbar">menu</open-taskbar>
+  <taskbar-effect id="taskbarEffect"></taskbar-effect>
+  <taskbar id="taskbar" class="taskbar">
+	  <div style="background: #9DE0AD; width: 100%;height: 90px;margin-bottom: 15px;">
+	    <button style="background:#45ADA8;cursor:default;" class="material-icons" id="roomsButton">view_module</button>
+	    <button class="material-icons" id="usersButton">supervisor_account</button>
+	    <button class="material-icons" id="infoButton">info</button>
+	  </div>
+	  <ver>v{{ version }}</ver>
+	  <div id="infoHeader" class="tbinfo">info</div>
+	  <div id="tbinfo" class="tbinfo"></div>
+	  <div id="userHeader" class="tbusers">userlist</div>
+	  <div id="tbusers" class="tbusers">
+	    <div id="userslist">Loading...</div>
+	  </div>
+	  <div id="roomsHeader" class="tbrooms">rooms</div>
+	  <div id="tbrooms" class="tbrooms">
+	    <div id="roomslist">
+		    <div id="main" class="rooms" style="cursor:default;">> main <</div>
+		    <div id="secondary" class="rooms">secondary</div>
+        <form id="roomForm">
+          <input id="entroom" autocomplete="off" maxlength="250" placeholder="enter room" onkeydown="return !/^[<>]+$/ig.test(event.key)" oncontextmenu="return false;">
+	        <button id="joinroom"><span class="material-icons" style="font-size:24px;">send</span></button>
+        </form>
+        <li>join custom room</li>
+	    </div>
+	  </div>
+	  <div id="ping">Ping: 100ms</div>
+  </taskbar>
+
+<!-- account thingy -->
+  <span id="openAcc" class="material-icons acc">account_circle</span>
+  <acc-field id="menuAcc" class="acc" autocomplete="off" oncontextmenu="return false;"></acc-field>
+
+<!-- "user is typing" display -->
+  <div id="feedback" style="position:fixed;bottom:0;z-index:1;left:10%;color:white;"></div>
+
+<!-- messages display -->
+  <ul id="messages"></ul>
+
+<!-- private message display -->
+  <span id="pm"></span>
+
+<!-- message form -->
+  <form id="msgForm">
+    <input id="m" autocomplete="off" maxlength="250" placeholder="type your message here" onkeydown="return !/^[<>]+$/ig.test(event.key)" oncontextmenu="return false;"><span id="addImage" class="material-icons">image</span>
+	  <button id="b"><span class="material-icons" style="font-size:24px;">send</span></button>
+  </form>
+
+<!-- username form -->
+	<div id="myModal" class="modal">
+		<img id="logo" src="img/logo.png" alt="webchat">
+		<div class="modal-content">
+			<h1 class="modal-title">Enter a username</h1>
+			<input id="nickname-input" autocomplete="off" onkeydown="return /^[a-z0-9. _!\b]+$/ig.test(event.key)" class="custom-input" type="text" maxlength="10" placeholder="user" oncontextmenu="return false;">
+      <notice id="modal-notice" class="vue"></notice>
+    </div>
+  </div>
+<!-- transition effect thing -->
+  <div class="backgrounds-shades">
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+  </div>
+
+<!-- game thing -->
+  <div id="game">
+    <iframe src="https://cyberpong.hmarin.repl.co/" width="1200" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <span class="material-icons">cancel</span>
+  </div>
+
+<!-- insert plugins -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/base64-string.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.0.7/compressor.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<!-- insert client code -->
+  <script src="client.js"></script>
+</body>
+</html>
