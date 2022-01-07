@@ -1,0 +1,642 @@
+/* animation thingies */ 
+
+@keyframes hover1in {
+  40% {transform: translateY(-5px);}
+  60% {transform: translateY(-4px);}
+  70% {transform: translateY(-2px);}
+  80% {transform: translateY(0);}
+  100% {transform: scale(1.1);}
+}
+@keyframes hover1out {
+  0% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+/* stuff related to username input menu */
+ .modal {
+     display: block;
+     position: absolute;
+     z-index: 5;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(to right, #556270, #4ECDC4);
+     overflow: none;
+}
+ .modal-content {
+     color: white;
+     top: -100%;
+     max-width: 500px;
+     height: 35%;
+     min-height: 200px;
+     background-color: #547980;
+     margin: 12% auto;
+     padding: 20px;
+     width: 80%;
+     text-align: center;
+     position: relative;
+     border-top: 8px solid #45ADA8;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+}
+ .modal-title {
+     margin: 15px 0px;
+     position: relative;
+}
+ #nickname-input {
+     margin-top: 5px;
+     position: relative;
+     width: 45%;
+     text-align: center;
+     font-size: 26px;
+     border: 0;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     font-family: 'Nunito', sans-serif;
+     background: #45ADA8;
+     color: white;
+     transition: all .3s ease-out;
+}
+#nickname-input:focus {
+  background: rgb(103, 194, 191);
+}
+ #modal-notice {
+     position: relative;
+     margin-top: 6%;
+     text-align: center;
+     color: #9DE0AD;
+     letter-spacing: 3px;
+}
+
+#logo {
+  position: relative;
+  width: 350px;
+  display: block;
+  margin: 0 auto;
+  top: -100%;
+  text-align: center;
+}
+
+/* idk tbh */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+/* custom scrollbar */
+ ::-webkit-scrollbar {
+     width: 10px;
+}
+ ::-webkit-scrollbar-track {
+     background: rgba(241,241,241,0.2);
+     border-radius: 5px;
+}
+ ::-webkit-scrollbar-thumb {
+     background: #f1f1f1;
+     border-radius: 5px;
+}
+ ::-webkit-scrollbar-thumb:hover {
+     background: #c5c5c5;
+}
+/* page background */
+ body {
+     font-family: 'Nunito', sans-serif;
+     font-size: 20px;
+     height: 100vh;
+    background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+     overflow-x: hidden;
+     overflow-y: auto;
+}
+/* message input form */
+ #msgForm {
+     position: fixed;
+     left: 5%;
+     background: #547980;
+     bottom: 0;
+     width: 90%;
+     height: 15%;
+     border-top: 8px solid #45ADA8;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+}
+#m {
+     position: relative;
+     background: #45ADA8;
+     padding: 20px;
+     width: 81%;
+     height: 50%;
+     top: 20%;
+     left: 5%;
+     font-family: 'Nunito', sans-serif;
+     font-size: 20px;
+     border: 0;
+     color: white;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+     transition: all .3s ease-out;
+}
+#b {
+  position: absolute;
+  font-family: 'Nunito', sans-serif;
+  width: 3%;
+  right:5%;
+  top:24%;
+  height: 40%;
+  background: #45ADA8;
+  border: 0;
+  border-radius: 5px;
+  color: #EEFBFB;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  transition: all .3s ease-out;
+}
+ input:focus {
+     outline: none;
+     background: rgb(103, 194, 191);
+}
+ #b:focus {
+     outline: none;
+    background: rgb(103, 194, 191);
+}
+#addImage {
+  position: absolute;
+  top: 17%;
+  right: 10%;
+  cursor: pointer;
+}
+
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown), html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {height: 100% !important;overflow-y: visible !important;} /* fix swal2 bug */
+/* taskbar customization and stuff */
+ taskbar {
+     text-align: center;
+     position: fixed;
+     left: -20%;
+     bottom: 0;
+     height: 100%;
+     width: 20%;
+     z-index: 5;
+     background: #7FCAB1;
+     color: white;
+     border-top-right-radius: 5px;
+     border-bottom-right-radius: 5px;
+     font-size: 10%;
+     overflow-y:hidden;
+     overflow-x:hidden;
+}
+ver {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 15px;
+}
+
+ #tbinfo {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     font-size:15px;
+     overflow-y:auto;
+     overflow-x:hidden;
+    left:100%;
+}
+ #infoHeader {
+     position: absolute;
+     top: 60px;
+     height: 30px;
+     background:#9DE0AD;
+     font-size:25px;
+     width:100%;
+     left:100%;
+}
+ #updates {
+     background:#7FCAB1;
+     color: rgb(255, 232, 232);
+}
+ #misc {
+     background:#7FCAB1;
+     padding-left:10px;
+     padding-right:10px;
+     display:inline-block;
+     width:100%;
+}
+ #tbNotice {
+     position:absolute;
+     bottom:24%;
+     width:100%;
+     text-align:center;
+     margin-left:auto;
+     margin-right:auto;
+     font-size:20px;
+     color:#E5FCC2;
+     display:block;
+}
+ .notice a {
+     cursor:pointer;
+     font-style: italic;
+}
+ .notice b {
+     color: white;
+}
+ #tbusers {
+     position: absolute;
+     left:100%;
+     height: 100%;
+     width: 100%;
+     font-size:20px;
+     overflow-y:auto;
+     overflow-x:hidden;
+}
+ #userHeader {
+     position: absolute;
+     top: 60px;
+    height: 30px;
+     background:#9DE0AD;
+     font-size:25px;
+     width:100%;
+     left:100%;
+}
+
+.users {
+  position: relative;
+  width:100%;
+  cursor:pointer;
+}
+
+.userAction {
+  overflow: hidden;
+  display: none;
+  background: #9DE0AD;
+}
+.userActions {
+  width: 70%;
+  left: 15%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  position: relative;
+  border: 0;
+  background: #45ADA8;
+  cursor: pointer;
+}
+.users:nth-child(odd) {
+  background-color: rgb(85, 180, 141);
+}
+.users:nth-child(even) {
+  background-color: rgb(98, 190, 160);
+}
+
+ #tbrooms {
+     position: absolute;
+     height: 100%;
+     width: 100%;
+     font-size:20px;
+     overflow-y:auto;
+     overflow-x:hidden;
+}
+#roomsHeader {
+  position: absolute;
+     top: 60px;
+    height: 30px;
+     background:#9DE0AD;
+     font-size:25px;
+     width:100%;
+}
+.rooms {
+  position: relative;
+  width:100%;
+  cursor:pointer;
+}
+.rooms:nth-child(odd) {
+  background-color: rgb(85, 180, 141);
+}
+.rooms:nth-child(even) {
+  background-color: #62bea0;
+}
+#roomForm {
+     position: relative;
+     top: 35px;
+     width: 100%;
+     height: 100px;
+}
+#entroom {
+     position: absolute;
+     background: #45ADA8;
+     padding: 20px;
+     text-align: center;
+     width: 55%;
+     height: 7%;
+     top: 20%;
+     left: 10%;
+     font-family: 'Nunito', sans-serif;
+     font-size: 20px;
+     border: 0;
+     color: white;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+     transition: all .3s ease-out;
+}
+#joinroom {
+  position: absolute;
+  font-family: 'Nunito', sans-serif;
+  width: 17%;
+  right:10%;
+  top:20%;
+  height: 40%;
+  background: #45ADA8;
+  border: 0;
+  border-radius: 5px;
+  color: #EEFBFB;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  transition: all .3s ease-out;
+}
+ #joinroom:focus {
+     outline: none;
+    background: rgb(103, 194, 191);
+}
+
+ #ping {
+     position:absolute;
+     bottom:0;
+     background:#6abdb9;
+     width: 100%;
+     font-size: 15px;
+}
+ taskbar button {
+     background: #e0ad9d;
+     position: relative;
+     top: 0;
+     right: 19%;
+     margin-left: 10px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+     z-index: 6;
+     height: 48px;
+     border: 0;
+     border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
+     transition: all .3s ease-out;
+     cursor: pointer;
+}
+ taskbar button:focus {
+     outline: none;
+}
+ open-taskbar {
+     position: fixed;
+     left: 1%;
+     top: 1%;
+     cursor: pointer;
+     z-index: 0;
+     text-shadow: 0px 3px 0 rgba(0, 0, 0, 0.5);
+     animation: hover1out 0.2s ease both;
+}
+open-taskbar:hover {
+  animation: hover1in 0.5s ease both;
+}
+
+ taskbar-effect {
+     width: 100%;
+     height: 100%;
+     background: rgba(0,0,0,0.5);
+     display: none;
+     position: fixed;
+     z-index: 4;
+}
+/* voicechat menu */
+ audiobar {
+     display: none;
+     top: 60px;
+     left: 10px;
+     width: 68px;
+     height: 131px;
+     position: fixed;
+     background: #547980;
+     border-top: 8px solid #45ADA8;
+     border-radius: 5px;
+     z-index: 5;
+}
+ audiobar button {
+     position: relative;
+     left: 10px;
+     top: 10px;
+     border: 0;
+     outline: 0;
+     background: #45ADA8;
+     border-radius: 5px;
+     margin-top: auto;
+     margin-bottom: auto;
+}
+audiobar button:hover {
+  background: rgb(103, 194, 191);
+}
+
+#pm {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  font-size: 20px;
+  background: #45ADA8;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  display: none;
+}
+#pm span {
+  position: relative;
+  color: #d12a35;
+  top: 3px;
+  border-radius: 5px;
+  font-size: 100%;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#openAcc {
+     position: fixed;
+     right: 1%;
+     top: 1%;
+     cursor: pointer;
+     z-index: 3;
+     text-shadow: 0px 3px 0 rgba(0, 0, 0, 0.5);
+     animation: hover1out 0.2s ease both;
+}
+#openAcc:hover {
+  animation: hover1in 0.5s ease both;
+}
+#menuAcc {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  z-index: 2;
+  border-radius: 5px;
+  background: #9de0ad;
+  color: white;
+  width: 300px;
+  height: 48px;
+  font-size: 40px;
+  text-align: center;
+  transition: all .3s ease-out;
+  opacity: 0;
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+#menuAcc input {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  border: 0;
+    position: relative;
+     background: #45ADA8;
+     padding: 10px;
+     color: white;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+     transition: all .3s ease-out;
+     height: 30px;
+     text-align: center;
+     bottom: 10px;
+}
+ #menuAcc input:focus {
+     outline: none;
+     background: rgb(103, 194, 191);
+}
+#tagAcc {
+  width: 100px;
+  margin-right: 20px;
+}
+#userAcc {
+  width: 150px;
+}
+
+/* google icons */
+ .material-icons {
+     font-size: 48px;
+     color: #EEFBFB;
+     user-select: none;
+}
+/* messages display */
+ #messages {
+   position: absolute;
+   display: block;
+   left: 7.5%;
+     list-style-type: none;
+     height: 85%;
+     width: 85%;
+     overflow-x: hidden;
+     overflow-y: auto;
+     background: rgba(0,0,0,0.1);
+     box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+     text-align: center;
+}
+ #messagesNormal {
+     position: relative;
+     display: block;
+     clear: both;
+     text-align: left;
+     max-width: 60%;
+     min-width: 40%;
+     font-size: 24px;
+     padding: 5px 20px;
+     margin: 10px 100px;
+     border-radius: 10px;
+     overflow-wrap: break-word;
+}
+ .networkMsg {
+     background: #9de0ad;
+     float: left;
+}
+ .clientMsg {
+     background: #E5FCC2;
+     float: right;
+}
+#messagesSmall {
+  position: relative;
+  display: block;
+  font-size: 28px;
+  background: none;
+  border: none;
+  text-align: center;
+  margin: auto;
+  text-shadow: 0px 0px 5px #000;
+  width: 50%;
+  clear: both;
+  padding: 2px 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow-wrap: break-word;
+}
+/* placeholders text customization */
+ ::placeholder {
+     opacity: 0.6;
+     color: #EEFBFB;
+}
+ .chat-img {
+   position: relative;
+     height: auto;
+     max-width: 950px;
+     min-width: 50px;
+     border: 4px solid #45ADA8;
+     user-select: none;
+}
+ .chat-video {
+   position: relative;
+     height: 315px;
+     width: 560px;
+     border: 4px solid #45ADA8;
+}
+.mention {
+  color:blue;
+  text-decoration: underline;
+  text-decoration-color: dodgerBlue;
+}
+
+
+/* transition effect thing */
+.backgrounds-shades { 
+  z-index: 10;
+  display:flex;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  visibility: hidden;
+}
+
+.backgrounds-shade {
+    flex:0 0 18%;
+    height:100%;
+    background-image:linear-gradient(0deg, #0093E9 0%, #80D0C7 100%);
+    transform-origin:bottom right;
+    transition:all 875ms cubic-bezier(0.8, 0, 0.2, 1);
+    transform:scaleX(1) scaleY(0);
+    z-index: 5;
+    visibility: hidden;
+}
+
+#game {
+  display: none;
+  position: absolute;
+  width:100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 6;
+}
+
+#game iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#game span {
+  position: absolute;
+  top:5px;
+  right:5px;
+  cursor: pointer;
+  color: #d12a35;
+}
